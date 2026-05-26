@@ -21,6 +21,9 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,1,0"
     />
   </head>
+
+  <script src="js/popup.js" defer></script>
+
   <body>
     <!-- 헤더 : 문송연 -->
     <header>
@@ -1424,5 +1427,7 @@
       background: transparent;
     "
     allowtransparency="true"
-  ></iframe>
+    onload="this.contentWindow.document.body.style.backgroundColor = 'transparent'"
+  >
+  </iframe>
 </html>
