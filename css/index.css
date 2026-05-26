@@ -2637,26 +2637,29 @@
     font-size: 15px;
   }
 }
-/* index.css 파일 하단에 추가 */
-#popup {
-  display: none; /* 기본 상태는 숨김 */
+/* dialog 태그 자체를 대상으로 선택자를 강화합니다 */
+dialog#popup {
+  display: none; /* 기본은 숨김 */
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
-/* 팝업이 활성화되었을 때(showModal() 호출 시) */
-#popup[open] {
-  display: block; /* 강제로 보이게 함 */
+/* open 속성이 붙었을 때 (showModal 실행 시) */
+dialog#popup[open] {
+  display: flex !important; /* 강제 표시 */
+  flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  margin: 0; /* 기본 마진 제거 */
 }
 
-/* 모달 배경 어둡게 하기 (선택 사항) */
-#popup::backdrop {
+/* 배경 어둡게 */
+dialog#popup::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
