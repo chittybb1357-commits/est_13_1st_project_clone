@@ -1173,8 +1173,8 @@
 }
 
 .review_estchat_title {
-    color: var(--purple);
-    font-size: 20px;
+  color: var(--purple);
+  font-size: 20px;
 }
 
 .review_estchat_body {
@@ -2636,4 +2636,27 @@
   .qnalist li.active .question > span {
     font-size: 15px;
   }
+}
+/* index.css 파일 하단에 추가 */
+#popup {
+  display: none; /* 기본 상태는 숨김 */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 팝업이 활성화되었을 때(showModal() 호출 시) */
+#popup[open] {
+  display: block; /* 강제로 보이게 함 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* 모달 배경 어둡게 하기 (선택 사항) */
+#popup::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
